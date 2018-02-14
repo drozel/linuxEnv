@@ -16,6 +16,6 @@ deng            English with german chars
       <variantList/>
 </layout>
 
-4. sudo dpkg-reconfigure keyboard-configuration
+4. sudo dpkg-reconfigure xkb-data
 
 5. restart if does`t work
