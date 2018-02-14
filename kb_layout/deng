@@ -11,4 +11,9 @@ xkb_symbols "basic"
         key <AD07> { [              u,              U,     udiaeresis,     Udiaeresis ] }; //   ü
         key <AD09> { [              o,              O,     odiaeresis,     Odiaeresis ] }; //   ö Ö
         key <AD10> { [              p,              P,          U1D68                 ] }; //   ᵨ
+
+	// on the same place as on german keyboard
+        key <AC10> { [       NoSymbol,       NoSymbol,     odiaeresis,     Odiaeresis ] };
+        key <AC11> { [       NoSymbol,       NoSymbol,     adiaeresis,     Adiaeresis ] }; 
+        key <AD11> { [       NoSymbol,       NoSymbol,     udiaeresis,     Udiaeresis ] };
 };
