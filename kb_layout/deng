@@ -5,15 +5,23 @@ xkb_symbols "basic"
 
         name[Group1] = "US (german tweaked)";
 
-        key <AB07> { [              m,              M,       Greek_mu                 ] }; //   μ
-        key <AC01> { [              a,              A,     adiaeresis,     Adiaeresis ] }; //   ä Ä
+	key <CAPS> { [ ISO_Level3_Shift            ] };
+
         key <AC02> { [              s,              S,         ssharp                 ] }; //   ß
         key <AD07> { [              u,              U,     udiaeresis,     Udiaeresis ] }; //   ü
         key <AD09> { [              o,              O,     odiaeresis,     Odiaeresis ] }; //   ö Ö
-        key <AD10> { [              p,              P,          U1D68                 ] }; //   ᵨ
+        key <AC01> { [              a,              A,     adiaeresis,     Adiaeresis ] }; //   ä Ä
 
 	// on the same place as on german keyboard
         key <AC10> { [       NoSymbol,       NoSymbol,     odiaeresis,     Odiaeresis ] };
         key <AC11> { [       NoSymbol,       NoSymbol,     adiaeresis,     Adiaeresis ] }; 
         key <AD11> { [       NoSymbol,       NoSymbol,     udiaeresis,     Udiaeresis ] };
+        key <AE11> { [       NoSymbol,       NoSymbol,         ssharp                 ] }; //   ß
+        key <AD03> { [       NoSymbol,       NoSymbol,       eurosign                 ] };
+
+	// special symbols
+	key <TLDE> { [      NoSymbol,       NoSymbol,         degree,      notsign    ] };
+        key <AD10> { [              p,              P,         U1D68                  ] };
+        key <AB07> { [              m,              M,      Greek_mu                  ] };
+        key <AE12> { [       NoSymbol,      NoSymbol,       notequal                  ] }; 
 };
