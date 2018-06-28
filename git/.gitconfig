@@ -1,0 +1,49 @@
+[user]
+	name = Vitaly Kolmakov 
+	email = vitaly.kolmakov@kinexon.com 
+	username = vitaly 
+[core]
+	editor = vi
+	excludesfile = ~/.gitignore
+[web]
+	browser = google-chrome
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = green bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[diff]
+	tool = kompare
+[difftool]
+	prompt = false
+[alias]
+	b = branch
+	ba = branch -a
+	bd = branch -d
+	bdd = branch -D
+	br = branch -r
+	c = commit
+	cp = cherry-pick
+	d = diff
+	ft = fetch
+	co = checkout
+	ps = push
+	up = pull --rebase
+	sh = "!f() { git difftool --dir-diff $1^ $1; }; f"
+	st = status
+	sa = stash apply
+	sl = stash list
+	sp = stash pop
+	ss = stash save
+	sw = stash show
