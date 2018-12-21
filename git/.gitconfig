@@ -5,6 +5,7 @@
 [core]
 	editor = vi
 	excludesfile = ~/.gitignore
+	autocrlf = input
 [web]
 	browser = google-chrome
 [color]
@@ -36,10 +37,12 @@
 	c = commit
 	cp = cherry-pick
 	d = diff
+	df = difftool --dir-diff HEAD
 	ft = fetch
 	co = checkout
 	ps = push
 	up = pull --rebase
+	upsub = submodule update --recursive --init
 	sh = "!f() { git difftool --dir-diff $1^ $1; }; f"
 	st = status
 	sa = stash apply
