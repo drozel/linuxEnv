@@ -92,7 +92,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias gitdf="git difftool --cached --dir-diff > /dev/null 2>&1 &"
 alias kinweb="API_SERVER=127.0.0.1:8081 npm start --nocache"
+alias kinweball="API_SERVER=127.0.0.1:8081 LISTEN_HOST=0.0.0.0 npm start --nocache"
 alias rebuild="git up && qmake -r && make clean && make -j8"
+alias sau="sudo apt update"
+alias saug="sudo apt upgrade"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
