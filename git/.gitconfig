@@ -25,7 +25,7 @@
 	changed = yellow bold
 	untracked = red bold
 [diff]
-	tool = kompare
+	tool = meld 
 [difftool]
 	prompt = false
 [alias]
@@ -50,3 +50,5 @@
 	sp = stash pop
 	ss = stash save
 	sw = stash show
+[merge]
+	conflictstyle = diff3
