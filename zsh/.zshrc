@@ -2,12 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/vitaly/.oh-my-zsh
+  export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="drozel"
+
+setopt IGNORE_EOF
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -60,6 +62,8 @@ ZSH_THEME="drozel"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -91,11 +95,36 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias gitdf="git difftool --cached --dir-diff > /dev/null 2>&1 &"
-alias kinweb="API_SERVER=127.0.0.1:8081 npm start --nocache"
-alias kinweball="API_SERVER=127.0.0.1:8081 LISTEN_HOST=0.0.0.0 npm start --nocache"
+
+alias kinweb="API_SERVER=127.0.0.1:8081 DEBUG=true npm start --nocache"
+alias kinweball="API_SERVER=127.0.0.1:8081 DEBUG=true LISTEN_HOST=0.0.0.0 npm start --nocache"
+alias kinweb2="cd ~/projects/kinexon/riot2/web && kinweb"
+alias kinweball2="cd ~/projects/kinexon/riot2/web && kinweball"
+alias kinweb3="cd ~/projects/kinexon/riot3/web && kinweb"
+alias kinweball3="cd ~/projects/kinexon/riot3/web && kinweball"
+alias kinwebdev="cd ~/projects/kinexon/riot/web && kinweb"
+alias kinweballdev="cd ~/projects/kinexon/riot/web && kinweball"
+
+alias riot="cd ~/projects/kinexon/riot"
+alias riot2="cd ~/projects/kinexon/riot2"
+alias riot3="cd ~/projects/kinexon/riot3"
+
+alias rfc="~/projects/kinexon/riot3/server/rfc1006/bin/rfc1006 -l -i 0.0.0.0 -p 6666"
+alias qtsudo="sudo /opt/Qt/Tools/QtCreator/bin/qtcreator -settingspath /opt/Qt/Tools/QtCreator/rootconfig &> /dev/null &"
+
 alias rebuild="git up && qmake -r && make clean && make -j8"
 alias sau="sudo apt update"
 alias saug="sudo apt upgrade"
+alias gitup="git stash && git up && git stash pop"
+
+alias scroll="tput rmcup"
+
+#alias ls='lsd'
+#alias ll='ls -l'
+#alias la='ls -a'
+#alias lla='ls -la'
+#alias lt='ls --tree'
+
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
