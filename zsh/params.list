@@ -1,0 +1,2 @@
+ZSH_CUSTOM $INSTALL_DIR/zsh
+ZSH_THEME "drozel"

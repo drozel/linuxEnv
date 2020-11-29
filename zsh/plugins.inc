@@ -1,0 +1,2 @@
+history-substring-search
+jump
