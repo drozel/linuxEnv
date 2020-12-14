@@ -1,2 +1,1 @@
-history-substring-search
-jump
+fzf jump

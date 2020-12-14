@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 INSTALL_DIR="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 cd $INSTALL_DIR
 
@@ -10,10 +12,14 @@ function set_zshrc_param {
 	REGEXP="^[[:space:]*#?[[:space:]]*$1=.*$"
 	MUSTBE=$1=$2
 	if grep -qP "$REGEXP" $ZSHRC; then
-		sed "s|$REGEXP|$1=$2|g" $ZSHRC  
+		sed -i "s|$REGEXP|$1=$2|g" $ZSHRC  
 	else
 		echo $MUSTBE >> $ZSHRC
 	fi
+}
+
+function resolve {
+	echo $1 | sed "s|\$INSTALL_DIR|$INSTALL_DIR|g"
 }
 
 # install ohmyszhs
@@ -29,14 +35,17 @@ if [ -e $OHMYZSH_DIR ]; then
 fi
 
 # install ZSH if not installed
-if [[ -v a ]]; then
+if [[ -v $UPDATE_ONLY ]]; then
 	wget -O zsh_install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-	sh zsh_install.sh
+	chmod +x ./zsh_install.sh
+	pwd
+	./zsh_install.sh
 fi
 
 # customize zsh with our options (overwriting if exists)
 while read p; do
-	set_zshrc_param $p
+	RESOLVED=$(resolve "$p")
+	set_zshrc_param $RESOLVED 
 done < params.list
 
 # add aliases
@@ -49,7 +58,14 @@ if [ -e $OHMYZSH_DIR/aliases.rc ]; then
 	for f in $OHMYZSH_DIR/aliases.rc ; do
 		bash "$f" -H 
 	done
+fi
 EOT
 
 # add plugins
-echo "plugins+=($(cat $INSTALL_DIR/plugins.inc))"
+echo "plugins+=($(cat $INSTALL_DIR/plugins.inc))" >> $ZSHRC
+
+# link themes
+for f in themes/*.zsh-theme
+do
+	ln -sf $(realpath $f) $OHMYZSH_DIR/$f 
+done
