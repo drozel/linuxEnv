@@ -10,10 +10,14 @@ if [[ "$UPDATED" == "$NOW" ]]; then
 	exit 0	
 fi
 
-echo "Updating linuxEnv..."
-#git pull --rebase
-../install.sh -f
-echo "Update finished!"
+echo -n "Updating linuxEnv..."
+git pull --rebase | grep 'is up to date.' &> /dev/null
+if [ $? == 0 ]; then
+   echo "nothing to update!"
+else 
+	../install.sh -f
+	echo -e "\nUpdate finished!"
+fi
 
 echo $NOW > updated.date
 
