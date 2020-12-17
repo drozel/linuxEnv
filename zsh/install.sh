@@ -84,3 +84,5 @@ done
 # add autoupdate (resticted to every N days)
 echo "$(realpath $INSTALL_DIR)/autoupdate.sh" >> $ZSHRC
 
+# include user's plain stuff
+cat plain.inc >> $ZSHRC
