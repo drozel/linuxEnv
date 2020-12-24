@@ -19,7 +19,7 @@ if [[ "$UPDATED" == "$NOW" ]]; then
 fi
 
 echo "Updating linuxEnv..."
-git pull --rebase | grep 'is up to date.' &> /dev/null
+git pull --rebase | grep -i 'up to date.' &> /dev/null
 if [ $? == 0 ]; then
    echo "nothing to update!"
 else 
