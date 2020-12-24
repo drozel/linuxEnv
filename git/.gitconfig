@@ -1,7 +1,11 @@
 [user]
-	name = Vitaly Kolmakov 
-	email = vitaly.kolmakov@kinexon.com 
-	username = vitaly 
+	name = Vitaly Kolmakov
+	username = vitaly
+	email = w.kolmakow@gmail.com
+
+[includeIf "gitdir:**/kinexon/**"]
+    path = .gitconfig_knx.inc
+
 [core]
 	editor = vi
 	excludesfile = ~/.gitignore
