@@ -30,7 +30,7 @@ function newline {
 
 # install ohmyszhs
 if [ -e $OHMYZSH_DIR ]; then
-	if [[ "$1" != "-f" ]]; then
+	if [[ "$1" != "update" ]]; then
 		echo "you seem to have ohmyzsh already installed"
 		read -r -p "Do you want to update config(u) or exit(e)? [u/E] " response
 		response=${response,,}    # tolower
