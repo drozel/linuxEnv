@@ -29,25 +29,13 @@ function newline {
 }
 
 # install ohmyszhs
-if [ -e $OHMYZSH_DIR ]; then
-	if [[ "$1" != "update" ]]; then
-		echo "you seem to have ohmyzsh already installed"
-		read -r -p "Do you want to update config(u) or exit(e)? [u/E] " response
-		response=${response,,}    # tolower
-		if [[ ! "$response" =~ ^(u)$ ]]; then
-			echo "zhs is already installed, update cancelled"
-			exit 0
-		fi
-	fi
-	UPDATE_ONLY=true
-fi
-
-# install ZSH if not installed
-if [[ -v $UPDATE_ONLY ]]; then
+if [ ! -e $OHMYZSH_DIR ]; then
 	wget -O zsh_install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 	chmod +x ./zsh_install.sh
 	pwd
 	./zsh_install.sh
+else
+	echo "you ohmyzsh seems to be already installed. We will only update your .zshrc"
 fi
 
 ###########################################################
