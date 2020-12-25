@@ -9,3 +9,4 @@ alias gitup="git stash && git up && git stash pop"
 alias kinweb="API_SERVER=127.0.0.1:8081 DEBUG=true npm start --nocache"
 alias kinweball="API_SERVER=127.0.0.1:8081 DEBUG=true LISTEN_HOST=0.0.0.0 npm start --nocache"
 
+alias j=jump
