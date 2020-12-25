@@ -93,3 +93,6 @@ echo "$(realpath $INSTALL_DIR)/autoupdate.sh" >> $ZSHRC
 # 6. include user's plain stuff
 newline
 cat plain.inc >> $ZSHRC
+
+# 7. call zsh at the end (to make just added changes accepted)
+echo "source $ZSH/oh-my-zsh.sh" >> $ZSHRC
