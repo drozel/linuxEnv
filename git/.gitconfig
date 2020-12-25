@@ -1,6 +1,6 @@
 [user]
 	name = Vitaly Kolmakov
-	username = vitaly
+	username = drozel 
 	email = w.kolmakow@gmail.com
 
 [includeIf "gitdir:**/kinexon/**"]
