@@ -86,13 +86,14 @@ do
 	ln -sf $(realpath $f) $OHMYZSH_DIR/$f 
 done
 
-# 5. add autoupdate (resticted to every N days)
-newline
-echo "$(realpath $INSTALL_DIR)/autoupdate.sh" >> $ZSHRC
-
-# 6. include user's plain stuff
+# 5. include user's plain stuff
 newline
 cat plain.inc >> $ZSHRC
 
-# 7. call zsh at the end (to make just added changes accepted)
+# 6. call zsh at the end (to make just added changes accepted)
 echo "source $ZSH/oh-my-zsh.sh" >> $ZSHRC
+
+
+# ALWAYS THE LAST ONE: add autoupdate (resticted to every N days)
+newline
+echo "$(realpath $INSTALL_DIR)/autoupdate.sh" >> $ZSHRC
