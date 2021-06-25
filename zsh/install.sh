@@ -69,8 +69,8 @@ echo ". $INSTALL_DIR/aliases.sh" >> $ZSHRC
 newline
 cat <<EOT >> $ZSHRC
 if [ -e $OHMYZSH_DIR/aliases.rc ]; then
-	for f in $OHMYZSH_DIR/aliases.rc ; do
-		bash "$f" -H 
+	for f in $OHMYZSH_DIR/aliases.rc/*(.) ; do
+		source "$f"
 	done
 fi
 EOT
